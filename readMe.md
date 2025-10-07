@@ -1,6 +1,6 @@
 # Gaze Tracking System
 
-A ROS2-based gaze tracking and visualization system with entropy calculation capabilities.
+A ROS2-based gaze tracking and visualization system with Dynamic Gaze Engagement Index (DGEI 2.0) calculation.
 
 ## Demo Video
 
