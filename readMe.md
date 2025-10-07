@@ -1,14 +1,89 @@
-Step one, download these zip files into the docker folder
+# Gaze Tracking System
 
-https://drive.google.com/drive/folders/1MaFMmUtnsVl0zWa6dhrkTjsXA0s1UMa0
+A ROS2-based gaze tracking and visualization system with entropy calculation capabilities.
 
-go to the folder of run_gaze_example.bash, run 'chmod +x run_gaze_example.bash'
+## Demo Video
 
-then run ./run_gaze_example.bash from the folder holding said file
+**Note:** A demonstration video showing the visualization in action will be uploaded after the anonymization period. The video has been temporarily removed for this reason.
 
-Please make your RVIZ look like the photo (RVIZ_setup.png), if not working there are some parameters to adjust in the roslaunch file
-ros2 launch dgei_gaze dgei_gaze_tracking.launch. You can edit the camera index if an external camera is being used.Feel free to edit code and modify eetc
+## Prerequisites
 
-during use can calibrate to a new optimial position with service call things (with frame) - ros2 service call /entropy_calculation dgei_interfaces/srv/EntropyCalculation "{calibration_time: 5.0, frames_required: 300, angle_tolerance: 10.0}"
+- Docker
+- ROS2
+- RVIZ
 
+## Installation & Setup
 
+### Step 1: Download Required Files
+
+Download the necessary zip files from the following Google Drive folder and extract them into the `docker` folder:
+
+[Download Files](https://drive.google.com/drive/folders/1MaFMmUtnsVl0zWa6dhrkTjsXA0s1UMa0)
+
+### Step 2: Set Execution Permissions
+
+Navigate to the folder containing `run_gaze_example.bash` and run:
+
+```bash
+chmod +x run_gaze_example.bash
+```
+
+### Step 3: Run the System
+
+Execute the bash script from the same directory:
+
+```bash
+./run_gaze_example.bash
+```
+
+## Configuration
+
+### RVIZ Setup
+
+Configure your RVIZ interface to match the provided reference image (`RVIZ_setup.png`). If the visualization is not working as expected, you may need to adjust parameters in the launch file.
+
+### Launch File Parameters
+
+The main launch file is located at:
+```
+ros2 launch dgei_gaze dgei_gaze_tracking.launch
+```
+
+You can modify various parameters including:
+- **Camera Index**: Adjust this parameter if you're using an external camera
+- Other system parameters as needed for your setup
+
+## Usage
+
+### Calibration
+
+To calibrate the system to a new optimal position, use the following service call:
+
+```bash
+ros2 service call /entropy_calculation dgei_interfaces/srv/EntropyCalculation "{calibration_time: 5.0, frames_required: 300, angle_tolerance: 10.0}"
+```
+
+**Parameters:**
+- `calibration_time`: Duration for calibration in seconds
+- `frames_required`: Number of frames needed for calibration
+- `angle_tolerance`: Tolerance angle in degrees
+
+## Customization
+
+Feel free to edit the code and modify parameters according to your specific requirements. The system is designed to be flexible and adaptable to different use cases.
+
+## Troubleshooting
+
+If you encounter issues:
+1. Verify that all zip files are correctly extracted in the `docker` folder
+2. Check that RVIZ is configured according to `RVIZ_setup.png`
+3. Adjust camera index in the launch file if using an external camera
+4. Review and modify launch file parameters as needed
+
+## License
+
+MIT License
+
+## Contact
+
+To be added after the review period
