@@ -16,7 +16,7 @@ A ROS2-based gaze tracking and visualization system with Dynamic Gaze Engagement
 
 ### Step 1: Download Required Files
 
-Download the necessary zip files from the following Google Drive folder and extract them into the `docker` folder:
+Download the necessary zip files from the following Google Drive folder into the `docker` folder:
 
 [Download Files](https://drive.google.com/drive/folders/1MaFMmUtnsVl0zWa6dhrkTjsXA0s1UMa0)
 
